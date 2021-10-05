@@ -1,0 +1,5 @@
+package com.mastek.Pizzania.dao;
+
+public interface PizzaniDao {
+
+}

@@ -1,0 +1,9 @@
+package com.mastek.Pizzania.dao;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.mastek.Pizzania.model.Pizzania;
+
+public interface PizzaniDao extends JpaRepository<Pizzania, Long>{
+
+}
