@@ -1,5 +1,6 @@
 package com.mastek.Pizzania.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EntityListeners;
 import javax.persistence.GeneratedValue;
@@ -19,37 +20,40 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 public class Pizzania {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Id
-	private int pid;
+	@Column(name="pid")
+	private int id;
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
 	private String p_name;
 	private int p_amount;
-	@Lob
-	private byte[] p_image;
+	@Column(length = 1000)
+//	@Lob
+//	private byte[] p_image;
+	private String p_image;
 	public Pizzania() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	
-	public Pizzania(int pid, String p_name, int p_amount, byte[] p_image) {
+
+	public Pizzania(int id, String p_name, int p_amount, String p_image) {
 		super();
-		this.pid = pid;
+		this.id = id;
 		this.p_name = p_name;
 		this.p_amount = p_amount;
 		this.p_image = p_image;
 	}
 
-	public byte[] getP_image() {
+	public String getP_image() {
 		return p_image;
 	}
 
-	public void setP_image(byte[] p_image) {
+	public void setP_image(String p_image) {
 		this.p_image = p_image;
-	}
-
-	public int getPid() {
-		return pid;
-	}
-	public void setPid(int pid) {
-		this.pid = pid;
 	}
 	public String getP_name() {
 		return p_name;
