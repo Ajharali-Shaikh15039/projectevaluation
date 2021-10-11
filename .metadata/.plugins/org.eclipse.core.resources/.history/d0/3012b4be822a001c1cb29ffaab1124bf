@@ -31,8 +31,8 @@ public class PizzaniaController {
 	}
 	
 	@GetMapping("/pizza-details/{id}")
-	public Pizzania getPizzaByPid(@PathVariable (value="id") int id) {
-		Optional<Pizzania> optional=pizzaniaDao.findById(id);
+	public Pizzania getPizzaByPid(@PathVariable (value="id") Long id) {
+		Optional<Pizzania> optional=pizzaniaDao.findById(id).get(id);
 		if(optional.isPresent()) {
 				return optional.get();
 		}

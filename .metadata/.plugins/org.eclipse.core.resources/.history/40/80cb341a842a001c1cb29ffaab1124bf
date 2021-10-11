@@ -31,11 +31,11 @@ public class PizzaniaController {
 	}
 	
 	@GetMapping("/pizza-details/{id}")
-	public Pizzania getPizzaByPid(@PathVariable (value="id") int id) {
-		Optional<Pizzania> optional=pizzaniaDao.findById(id);
-		if(optional.isPresent()) {
-				return optional.get();
-		}
-			return null;
+	public Pizzania getPizzaByPid(@PathVariable (value="id") Long id) {
+		Optional<Pizzania> optional=pizzaniaDao.findById(id).get();
+//		if(optional.isPresent()) {
+//				return optional.get();
+//		}
+//			return null;
 	}
 }

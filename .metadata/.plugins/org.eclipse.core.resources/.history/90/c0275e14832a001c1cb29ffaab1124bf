@@ -1,0 +1,10 @@
+package com.mastek.Pizzania.model;
+
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity
+@Table(name ="signup")
+public class Signup {
+
+}
