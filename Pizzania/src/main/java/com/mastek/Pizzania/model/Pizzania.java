@@ -6,7 +6,7 @@ import javax.persistence.EntityListeners;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.Lob;
+//import javax.persistence.Lob;
 import javax.persistence.Table;
 
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
@@ -18,8 +18,8 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 @EntityListeners(AuditingEntityListener.class)
 @JsonIgnoreProperties(value= {"createdAt","udpatedAt"},allowGetters=true)
 public class Pizzania {
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="pid")
 	private int id;
 	public int getId() {
