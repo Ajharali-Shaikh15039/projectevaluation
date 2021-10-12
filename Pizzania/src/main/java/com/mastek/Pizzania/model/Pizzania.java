@@ -20,8 +20,68 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 public class Pizzania {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	@Column(name="pid")
 	private int id;
+	private String title;
+	private int price;
+	private String description;
+	private String category;
+	@Column(length = 1000)
+	private String image;
+	public Pizzania() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public Pizzania(int id, String title, int price, String description, String category, String image) {
+		super();
+		this.id = id;
+		this.title = title;
+		this.price = price;
+		this.description = description;
+		this.category = category;
+		this.image = image;
+	}
+
+	public String getTitle() {
+		return title;
+	}
+
+	public void setTitle(String title) {
+		this.title = title;
+	}
+
+	public int getPrice() {
+		return price;
+	}
+
+	public void setPrice(int price) {
+		this.price = price;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+	public String getCategory() {
+		return category;
+	}
+
+	public void setCategory(String category) {
+		this.category = category;
+	}
+
+	public String getImage() {
+		return image;
+	}
+
+	public void setImage(String image) {
+		this.image = image;
+	}
+
 	public int getId() {
 		return id;
 	}
@@ -29,44 +89,7 @@ public class Pizzania {
 	public void setId(int id) {
 		this.id = id;
 	}
-	private String p_name;
-	private int p_amount;
-	@Column(length = 1000)
-//	@Lob
-//	private byte[] p_image;
-	private String p_image;
-	public Pizzania() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
-
-	public Pizzania(int id, String p_name, int p_amount, String p_image) {
-		super();
-		this.id = id;
-		this.p_name = p_name;
-		this.p_amount = p_amount;
-		this.p_image = p_image;
-	}
-
-	public String getP_image() {
-		return p_image;
-	}
-
-	public void setP_image(String p_image) {
-		this.p_image = p_image;
-	}
-	public String getP_name() {
-		return p_name;
-	}
-	public void setP_name(String p_name) {
-		this.p_name = p_name;
-	}
-	public int getP_amount() {
-		return p_amount;
-	}
-	public void setP_amount(int p_amount) {
-		this.p_amount = p_amount;
-	}
+	
 	
 	
 }
